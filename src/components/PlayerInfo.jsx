@@ -8,6 +8,7 @@ function PlayerInfo({player}) {
             <td>{player.scores}</td>
             <td>#{player.position}</td>
             <td>{player.hits}</td>
+            <td>{player.fireRate}</td>
             </tr>
     )
 }

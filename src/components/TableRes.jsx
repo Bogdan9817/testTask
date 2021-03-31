@@ -18,6 +18,8 @@ function TableRes({data, val, find }) {
             data.sort((a,b)=>a.scores-b.scores);
         }else if(val==='hits'){
             data.sort((a,b)=>a.hits-b.hits)
+        }else if(val==='fireRate'){
+            data.sort((a,b)=>a.fireRate-b.fireRate)
         }
         return data
     }
@@ -26,7 +28,7 @@ function TableRes({data, val, find }) {
     
     return (
         <table >
-            <tr><td>Name</td><td>Time</td><td>Scores</td><td>Position</td><td>Hits</td></tr>
+            <tr><td>Name</td><td>Time</td><td>Scores</td><td>Position</td><td>Hits</td><td>Fire Rate</td></tr>
             {sortBy(data,val).map(player=> player.name.toLowerCase().includes(find.toLowerCase()) || find === ""?<PlayerInfo  player={player}/>:'')}
            
         </table>

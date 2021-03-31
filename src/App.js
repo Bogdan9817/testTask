@@ -22,6 +22,7 @@ function App() {
         <option value="scores">by scores</option>
         <option value="time">by time</option>
         <option value="hits">by hits</option>
+        <option value='fireRate'>by fire rate</option>
       </select>
       
       <input className='position-centre' placeholder='find player'onChange={(e)=>setFind(e.target.value)} value={find}type="text"/>
