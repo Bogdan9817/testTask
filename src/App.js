@@ -1,23 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import TableRes from './components/TableRes';
+import {useState,} from 'react'
+import data from './data/data'
 
 function App() {
+  const [val, setVal] = useState('position')
+  const [find, setFind] = useState('')
+ 
+
+  const handleChange = (e)=>{
+    setVal(e.target.value)
+  }
+  
+    
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className='position-center'>
+      <select  onChange={(e)=>handleChange(e)} className="position-centre">
+        <option value="position">by position</option>
+        <option value="name">by name</option>
+        <option value="scores">by scores</option>
+        <option value="time">by time</option>
+        <option value="hits">by hits</option>
+      </select>
+      
+      <input className='position-centre' placeholder='find player'onChange={(e)=>setFind(e.target.value)} value={find}type="text"/>
+      </div>
+      <div className='centrify'>
+       
+       <TableRes data={data} val={val} find={find} /> 
+        </div>
+     
     </div>
   );
 }
